@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="UserHome.css">
+</head>
+<body>
+    <div class="action">
+        <div class="profile"  onclick="menuToggle();">
+            
+            <img src=" <%= user.image %>" width="100px"  alt="<%= user.image %>">
+
+            
+        </div>
+        <div class="menu">
+            <h3>  <%= user.name %> <br> <span> JS Devloper </span> </h3>
+            <ul>
+                <li><img src="user-solid.svg" width="30px" alt=""> <a href="">My Profile</a></li>
+                <li><img src="pen-to-square-solid.svg" width="30px" alt=""> <a href="/edit?id=<%= user._id%>">Edit</a></li>
+                <li><img src="message-solid.svg" width="30px" alt=""> <a href="">Inbox</a></li>
+                <li><img src="gear-solid.svg" width="30px" alt=""> <a href="">Setting</a></li>
+                <li><img src="circle-info-solid.svg" width="30px" alt=""> <a href="">Help</a></li>
+
+                <li><img src="right-from-bracket-solid.svg" width="30px" alt=""> <a href="/logout">Logout</a></li>
+
+
+
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>welcome <%= user.name %> </h1>
+    </div>
+
+<!-- 
+    <% include('../layouts/header.ejs') %>
+
+
+
+<h1>welcome <%= user.name %>
+</h1>
+
+<table>
+    <tr>
+        <td >
+            <img src=" <%= user.image %>" width="100px"  alt="<%= user.image %>">
+        </td>
+       
+    </tr>
+    <tr>
+        <td>email</td>
+        <td><%= user.email %></td>
+    </tr>
+    <tr>
+        <td>Mobile</td>
+        <td><%= user.mobile %></td>
+    </tr>
+</table>
+
+
+<a href="/edit?id=<%= user._id%>"> edit</a>
+
+<% include('../layouts/footer.ejs') %>
+
+-->
+
+   
+
+    <script>
+        const toggleMenu = document.querySelector('.menu')
+
+        function menuToggle (){
+            toggleMenu.classList.toggle('active')
+        }
+    </script>
+</body>
+</html>
